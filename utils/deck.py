@@ -1,20 +1,9 @@
 import random
 def  create_card(rank:str, suite:str) -> dict:
-    card_dict = {}
-    card_dict["rank"] = rank
-    card_dict["suite"] = suite
-    if rank.isdigit():
-        card_dict["value"] = int(rank)
-    elif rank == "J":
-        card_dict["value"] = 11
-    elif rank == "Q":
-        card_dict["value"] = 12
-    elif rank == "K":
-        card_dict["value"] = 13
-    elif rank == "A":
-        card_dict["value"] = 14
-    return card_dict
-
+    card = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
+    value = card.index(rank) + 2
+    return {"rank": rank, "suite": suite, "value": value}
+    
 
 def compare_cards(p1_card: dict, p2_card: dict) -> str:
     if p1_card["value"] > p2_card["value"]:
